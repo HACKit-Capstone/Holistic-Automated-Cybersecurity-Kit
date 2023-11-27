@@ -16,14 +16,12 @@ It aims to automate and streamline the penetration testing process, saving time 
 
 
 <table class="tg">
-<thead>
+  <tbody>
   <tr>
-    <th class="tg-0pky">ssti</th>
+    <th class="tg-0pky">SSTI</th>
     <th class="tg-0pky">LFI</th>
     <th class="tg-0pky">XSS</th>
   </tr>
-</thead>
-<tbody>
   <tr>
     <td class="tg-0pky">CORS</td>
     <td class="tg-0pky">CRLF</td>
