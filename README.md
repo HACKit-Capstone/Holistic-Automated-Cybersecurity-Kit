@@ -18,9 +18,9 @@ It aims to automate and streamline the penetration testing process, saving time 
 <table class="tg">
   <tbody>
   <tr>
-    <th class="tg-0pky">SSTI</th>
-    <th class="tg-0pky">LFI</th>
-    <th class="tg-0pky">XSS</th>
+    <td class="tg-0pky">SSTI</td>
+    <td class="tg-0pky">LFI</td>
+    <td class="tg-0pky">XSS</td>
   </tr>
   <tr>
     <td class="tg-0pky">CORS</td>
