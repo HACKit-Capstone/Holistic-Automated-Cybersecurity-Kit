@@ -15,5 +15,7 @@ It aims to automate and streamline the penetration testing process, saving time 
 ### Current vulnerability detection facilities that HACKit will provide
 
 | ssti | LFI   | XSS                 |
+
 | CORS | CRLF  | Open-redirect       |
+
 | SQLi | Log4j | Prototype-pollution |
