@@ -148,7 +148,7 @@ elif choice == 11:
 
 else:
     print('Invalid choice. Please make a choice again.')
-    #Redirect again to choosing the correct output.
+    #Redirect again to choosing the correct input.
     
 
 
