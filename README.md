@@ -3,7 +3,7 @@
 
 HACKit is a tool that automates the process of penetration testing.
 
-It is a tool which has access to exploit multiple bugs simultaneously or together.
+It is a tool which has access to exploit multiple bugs simultaneously or one by one.
 
 It aims to automate and streamline the penetration testing process, saving time and enhancing security.​
 
