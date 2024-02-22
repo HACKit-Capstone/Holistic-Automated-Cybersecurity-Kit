@@ -1,6 +1,7 @@
 from os import system
+import sys
 
-msg = input("Enter the target (bing.com): ")
+msg = sys.argv[1]
 
 # system('cat {}.txt | waybackurls > {}urls.txt')
 
@@ -21,3 +22,20 @@ with open('{}ssti.txt'.format(msg), 'r') as output_file:
 print("URLs with identified SSTI:")
 for ssti_url in ssti_urls:
     print(ssti_url)
+
+vulnerable_urls_file = '{}vulnerable_urls.txt'.format(msg)
+with open(vulnerable_urls_file, 'w') as output:
+    output.write("Vulnerable URLs:\n")
+    for url in ssti_urls:
+        output.write(url + '\n')
+
+# print(f"Vulnerable URLs saved in '{vulnerable_urls_file}' file.")
+
+system("rm -rf {}ssti.txt".format(msg))
+system("sort {}vulnerable_urls.txt | uniq > {}ssti.txt".format(msg, msg))
+system("rm -rf {}vulnerable_urls.txt".format(msg))
+
+print(f"SSTI vulnerabilities saved to: {msg}ssti.txt")
+
+# system(f"cat tee -a {msg}ssti.txt | notify")
+
