@@ -1,8 +1,7 @@
 from os import system
+import sys
 
-msg = input("Enter the target (bing.com): ")
-
-# system('cat {}.txt | waybackurls > {}urls.txt')
+msg = sys.argv[1]
 
 system("cat {}urls.txt | grep -a -i \=http | qsreplace 'http://evil.com' | while read host; do curl -s -L $host -I | grep 'http://evil.com' && echo -e \"$host \033[0;31mVulnerable\n\"; done | tee -a {}redir.txt".format(msg, msg))
 system("cat {}urls.txt | gf redirect | qsreplace 'http://example.com' | httpx -fr -title -match-string 'Example Domain' | tee -a {}redir.txt".format(msg, msg))
@@ -19,3 +18,7 @@ system("sort {}redir.txt | uniq > {}redir_sorted.txt".format(msg, msg))
 system("rm -rf {}redir.txt".format(msg))
 system("mv {}redir_sorted.txt {}redir.txt".format(msg, msg))
 system("rm -rf {}redir_sorted.txt".format(msg))
+
+print(f"Open-Redirect vulnerabilities saved to: {msg}redir.txt")
+
+# system(f"cat tee -a {msg}redir.txt | notify")
