@@ -1,9 +1,11 @@
-import os
+from os import system
+import sys
 
-msg = input("Enter the target (bing.com): ")
+msg = sys.argv[1]
+burp = input("Enter Burp collabrator client id address or interactsh domain address (yrt45r4sjyoj19617jem5briio3cs.burpcollaborator.net): ")
 
-os.chdir("log4j-scan")
+system(f"bash Log4j-RCE-Scanner/log4j-rce-scanner.sh -l {msg}.txt -b {burp} | tee -a {msg}log4j.txt")
 
-os.system("cat ../" + msg + ".txt | httpx | xargs -I@ sh -c 'python3 log4j-scan.py -u @ --run-all-tests --dns-callback-provider dnslog.cn'")
+print(f"Log4j vulnerabilities saved to: {msg}log4j.txt")
 
-os.chdir("..")
+# system(f"cat tee -a {msg}log4j.txt | notify")
