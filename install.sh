@@ -37,6 +37,10 @@ sudo mv -v $HOME/go/bin/* /usr/local/bin/
 # Install Python packages
 pip3 install uro
 pip3 install bhedak
+pip3 install tqdm
+pip3 install termcolor
+pip3 install pyfiglet
+
 
 # Clone and build urldedupe
 git clone https://github.com/ameenmaali/urldedupe.git
